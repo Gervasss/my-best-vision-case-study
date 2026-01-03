@@ -2,7 +2,8 @@
 
 Este repositório contém a documentação técnica e o estudo de caso detalhado do projeto **My Best Vision**. 
 
-Este documento descreve minha atuação, os desafios superados e as soluções de engenharia aplicadas. Por razões de confidencialidade e propriedade intelectual, o código-fonte original é privado.
+> **Nota:** Por razões de confidencialidade e propriedade intelectual vinculadas ao meu trabalho no Grupo Mercadótica, o código-fonte original deste projeto é privado. Dados sensíveis foram omitidos para preservar a integridade corporativa.
+
 
 ---
 
