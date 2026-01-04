@@ -51,6 +51,51 @@ Cada linha da planilha representa uma lente, contendo seu código e o novo preç
 Caso alguma lente presente na planilha não exista no banco de dados, o sistema registra esse evento e informa ao administrador, garantindo transparência e facilitando a correção de inconsistências. Erros pontuais durante a atualização de uma lente não interrompem o processo como um todo, permitindo que as demais atualizações continuem normalmente.
 Ao final do processamento, o sistema apresenta um feedback visual indicando quais lentes foram atualizadas com sucesso, além de mensagens de confirmação ou erro quando necessário. Independentemente do resultado, o estado de carregamento é finalizado, sinalizando o encerramento da operação.
 
+---
+
+
+### 📂 Estrutura de Pastas 
+
+A arquitetura  foi projetada seguindo padrões modernos do ecossistema **React**, focando em escalabilidade, reutilização de componentes e separação clara de lógica e interface.
+
+```text
+mbv-frontend-master/
+├── public/              # Ativos estáticos públicos
+├── src/                 # Código-fonte principal da aplicação
+│   ├── assets/          # Recursos como imagens, fontes e ícones
+│   ├── components/      # Componentes de interface reutilizáveis
+│   ├── contexts/        # Provedores de estado global (React Context API)
+│   ├── controller/      # Lógica intermediária de controle e manipulação de dados
+│   ├── pages/           # Componentes de página (telas principais do sistema)
+│   ├── routes/          # Definições de navegação e rotas da aplicação
+│   ├── services/        # Camada de comunicação com APIs externas
+│   ├── tests/           # Suíte de testes automatizados
+│   ├── types/           # Definições de tipos e interfaces TypeScript
+│   ├── utils/           # Funções utilitárias e helpers reutilizáveis
+│   ├── App.tsx          # Componente raiz da aplicação
+│   ├── index.css        # Estilos globais principais
+│   ├── index.tsx        # Ponto de entrada da renderização React
+│   └── routes.tsx       # Configuração centralizada das rotas
+├── .env.example         # Modelo para variáveis de ambiente
+├── .firebaseapp         # Configurações de integração com Firebase
+├── .gitignore           # Arquivos e pastas ignorados pelo Git
+├── firebase.json        # Configurações de deploy e hosting do Firebase
+├── jest.config.js       # Configurações do framework de testes Jest
+├── package.json         # Manifesto do projeto e dependências
+├── README.md            # Documentação principal do projeto
+└── tsconfig.json        # Configurações do compilador TypeScript
+
+```
+
+### 🛠️ Destaques da Arquitetura
+
+* **Tipagem Forte**: O uso de **TypeScript** em todo o projeto (evidenciado pelos arquivos `.ts` e `.tsx`) garante maior segurança no desenvolvimento e autocompletar eficiente.
+* **Gestão de Estado**: A pasta `contexts` indica o uso de **Context API** para gerenciar estados compartilhados, como autenticação de usuários ou preferências de tema, sem a necessidade de "prop drilling".
+* **Comunicação com API**: O diretório `services` centraliza as chamadas de rede, facilitando a manutenção caso a URL base ou os protocolos de autenticação do backend mudem.
+* **Qualidade de Código**: A presença de uma pasta `tests` e do arquivo `jest.config.js` demonstra a preocupação com a estabilidade do sistema através de testes unitários ou de integração.
+* **Deploy Automatizado**: Com arquivos como `firebase.json` e `.firebaserc`, o projeto está preparado para hospedagem rápida e segura na infraestrutura do **Firebase**.
+
+---
 
 
 
